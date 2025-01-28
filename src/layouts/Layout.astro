@@ -1,6 +1,8 @@
 ---
 import '@fontsource/grand-hotel';
 import '@fontsource-variable/inter';
+
+const { title } = Astro.props;
 ---
 
 <!doctype html>
@@ -9,8 +11,7 @@ import '@fontsource-variable/inter';
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>{title}</title>
 	</head>
 	<body class="font-body antialiased text-stone-900 bg-moss">
 		<slot />
