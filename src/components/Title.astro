@@ -1,0 +1,13 @@
+---
+interface Props {
+	size?: 'default' | 'small';
+	align?: 'center' | 'left';
+}
+const { size = 'default', align = 'center' } = Astro.props;
+---
+
+<h2
+	class=`${align === 'center' ? 'text-center' : ''} ${size === 'default' ? 'text-5xl md:text-6xl mb-12  font-display' : 'text-xl md:text-2xl font-semibold'}`
+>
+	<slot />
+</h2>

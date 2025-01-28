@@ -1,0 +1,13 @@
+---
+interface Props {
+	theme?: 'light' | 'dark';
+	density?: 'default' | 'compact';
+}
+const { theme = 'dark', density = 'default' } = Astro.props;
+---
+
+<section class=`px-8 ${theme === 'light' ? 'bg-sand-light' : 'text-sand-light'}`>
+	<div class=`text-lg md:text-xl ${density === 'compact' ? 'max-w-xl' : 'max-w-3xl'} mx-auto py-32 md:py-52`>
+		<slot />
+	</div>
+</section>

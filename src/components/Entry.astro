@@ -1,0 +1,24 @@
+---
+import Title from './Title.astro';
+
+const { title, time, image } = Astro.props;
+---
+
+<div class="flex flex-col gap-4 py-12 md:flex-row">
+	{
+		image && (
+			<div class="shrink-0 md:mr-8 md:w-48">
+				<img src={image} alt="" class="rounded" />
+			</div>
+		)
+	}
+	<div class="w-full">
+		<div class="mb-2 flex items-center justify-between gap-1">
+			<Title size="small" align="left">{title}</Title>
+			{time && <p class="font-bold">{time}</p>}
+		</div>
+		<div class=`flex flex-col gap-4 ${image ? 'text-base' : ''}`>
+			<slot />
+		</div>
+	</div>
+</div>
