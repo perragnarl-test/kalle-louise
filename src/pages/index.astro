@@ -4,10 +4,37 @@ import Section from '../components/Section.astro';
 import Entry from '../components/Entry.astro';
 import Title from '../components/Title.astro';
 import Layout from '../layouts/Layout.astro';
+
+interface Section {
+	frontmatter: {
+		title: string;
+		image?: string;
+		columns?: boolean;
+		order: number;
+	},
+	compiledContent: () => string;
+}
+
+let sections = await Promise.all(
+	Object.values(import.meta.glob<Section>('/src/content/sections/*.md')).map((fn) => fn())
+);
+
+// Sort by frontmatter order
+sections = sections.sort((a, b) => a.frontmatter.order - b.frontmatter.order);
 ---
 
 <Layout title="Karl-Henrik & Louise">
 	<Header />
+
+	{
+		sections.map((section, index) => (
+			<Section>
+				<Title>{section.frontmatter.title}</Title>
+				<Fragment set:html={section.compiledContent()}></Fragment>
+			</Section>
+		))
+	}
+
 	<Section theme="dark">
 		<Title>Vi ska gifta oss!</Title>
 		<div class="flex flex-col gap-8 md:flex-row">
