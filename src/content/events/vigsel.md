@@ -1,0 +1,7 @@
+---
+title: Vigsel
+image: src/content/media/vigsel.jpg
+time: 15:00
+---
+
+Vigseln kommer att äga rum i Lillegårdskyrkan. Efter vigseln kommer vi att ta emot gratulationer och kramar utanför kyrkan.

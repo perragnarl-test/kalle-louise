@@ -1,5 +1,12 @@
 media: src/content/media
 content:
+  - name: settings
+    label: Inställningar
+    type: file
+    path: src/content/settings.md
+    fields: 
+      - { name: title, label: Titel, type: string }
+      - { name: date, label: Datum, type: rich-text }
   - name: sections
     label: Sektioner
     type: collection

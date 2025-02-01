@@ -1,13 +1,23 @@
 ---
+import Title from './Title.astro';
+
 interface Props {
+	title: string;
 	theme?: 'light' | 'dark';
 	density?: 'default' | 'compact';
+	columns?: boolean;
+	list?: boolean;
 }
-const { theme = 'dark', density = 'default' } = Astro.props;
+const { theme = 'dark', density = 'default', columns = false, title, list = false } = Astro.props;
 ---
 
 <section class=`px-8 ${theme === 'light' ? 'bg-sand-light' : 'text-sand-light'}`>
-	<div class=`text-lg md:text-xl ${density === 'compact' ? 'max-w-xl' : 'max-w-3xl'} mx-auto py-32 md:py-52`>
-		<slot />
+	<div
+		class=`text-lg md:text-xl ${!list ? '[&_p]:mb-12' : ''} ${density === 'compact' ? 'max-w-xl' : 'max-w-3xl'} mx-auto py-32 md:py-52`
+	>
+		<Title>{title}</Title>
+		<div class={columns ? 'columns-2' : ''}>
+			<slot />
+		</div>
 	</div>
 </section>

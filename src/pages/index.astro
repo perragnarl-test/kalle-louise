@@ -2,8 +2,11 @@
 import Header from '../components/Header.astro';
 import Section from '../components/Section.astro';
 import Entry from '../components/Entry.astro';
-import Title from '../components/Title.astro';
 import Layout from '../layouts/Layout.astro';
+
+import * as settings from '/src/content/settings.md';
+import * as information from '/src/content/information.md';
+import * as schema from '/src/content/schema.md';
 
 interface Section {
 	frontmatter: {
@@ -15,152 +18,106 @@ interface Section {
 	compiledContent: () => string;
 }
 
+interface InfoEntry {
+	frontmatter: {
+		title: string;
+	},
+	compiledContent: () => string;
+}
+
+interface SchemaEvent {
+	frontmatter: {
+		title: string;
+		time: string;
+		image: string;
+	},
+	compiledContent: () => string;
+}
+
 let sections = await Promise.all(
 	Object.values(import.meta.glob<Section>('/src/content/sections/*.md')).map((fn) => fn())
 );
 
+let infoEntries = await Promise.all(
+	Object.values(import.meta.glob<InfoEntry>('/src/content/infos/*.md')).map((fn) => fn())
+);
+
+let schemaEvents = await Promise.all(
+	Object.values(import.meta.glob<SchemaEvent>('/src/content/events/*.md')).map((fn) => fn())
+);
+
 // Sort by frontmatter order
 sections = sections.sort((a, b) => a.frontmatter.order - b.frontmatter.order);
+
+// Sort by frontmatter time in descending order
+schemaEvents = schemaEvents.sort((a, b) => {
+    const aTime = a.frontmatter.time;
+    const bTime = b.frontmatter.time;
+
+    if (aTime < bTime) {
+        return -1;
+    }
+
+    if (aTime > bTime) {
+        return 1;
+    }
+
+    return 0;
+});
+
 ---
 
-<Layout title="Karl-Henrik & Louise">
-	<Header />
+<Layout title={settings.frontmatter.title}>
+	<Header content={settings.compiledContent()} date={settings.frontmatter.date} />
 
 	{
 		sections.map((section, index) => (
-			<Section>
-				<Title>{section.frontmatter.title}</Title>
+			<Section 
+				title={section.frontmatter.title} 
+				columns={section.frontmatter.columns} 
+				theme={index % 2 === 0 ? 'dark' : 'light'}
+			>
 				<Fragment set:html={section.compiledContent()}></Fragment>
 			</Section>
 		))
 	}
 
-	<Section theme="dark">
-		<Title>Vi ska gifta oss!</Title>
-		<div class="flex flex-col gap-8 md:flex-row">
-			<p>
-				Du som fått vår inbjudan med länken till denna hemsida är en av de personer som, på ett
-				eller annat vis, är de bästa i våra liv. Vi vill förstås att du ska komma till vårt bröllop
-				och dela den dagen med oss!
-			</p>
-			<p>
-				Vi har samlat all information här på hemsidan, på ett och samma ställe för att underlätta
-				för oss alla. Här finner du information om vigsel, fest och praktiska detaljer och lite
-				annat som ni kan tänkas vilja veta.
-			</p>
-		</div>
-	</Section>
-	<Section theme="light" density="compact">
-		<Title>Bröllopsdagen</Title>
+	<Section density="compact" title={schema.frontmatter.title} list theme={sections.length % 2 === 0 ? 'dark' : 'light'}>
 		<div class="flex flex-col gap-8">
 			<img
-				src="https://static.wixstatic.com/media/8f2c96_39aa63f8d26545ed813d7c0d656437bd~mv2.jpeg/v1/fill/w_853,h_451,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/8f2c96_39aa63f8d26545ed813d7c0d656437bd~mv2.jpeg"
+				src={schema.frontmatter.image}
 				alt=""
 				class="h-auto w-full rounded"
 			/>
 			<p class="mb-8">
-				Vår största önskan är att få dela denna dag med de personer som betyder allra mest för oss.
-				Låt oss göra denna dag oförglömlig tillsammans på Lillegård!
+				<Fragment set:html={schema.compiledContent()}></Fragment>
 			</p>
 
 			<ul>
-				<li class="border-b border-sand first-of-type:border-t">
-					<Entry
-						title="Vigsel"
-						time="Kl 15.00"
-						image="https://static.wixstatic.com/media/8f2c96_d7a1891a78a74891a2a08ca748f51874~mv2.jpg/v1/fit/w_1110,h_574,q_90/8f2c96_d7a1891a78a74891a2a08ca748f51874~mv2.jpg"
-					>
-						<p>
-							Vigseln kommer att äga rum i Lillegårdskyrkan. Efter vigseln kommer vi att ta emot
-							gratulationer och kramar utanför kyrkan.
-						</p>
-					</Entry>
-				</li>
-
-				<li class="border-b border-sand first-of-type:border-t">
-					<Entry
-						title="Middag"
-						time="Kl 17.00"
-						image="https://static.wixstatic.com/media/8f2c96_933117a5195b4f18a690960d750ba22e~mv2.jpeg/v1/fit/w_1086,h_663,q_90/8f2c96_933117a5195b4f18a690960d750ba22e~mv2.jpeg"
-					>
-						<p>
-							Efter vigseln bjuder vi in till middag och fest i Lillegårdens festlokal. Vi ser fram
-							emot att få fira denna dag tillsammans med er!
-						</p>
-					</Entry>
-				</li>
-
-				<li class="border-b border-sand first-of-type:border-t">
-					<Entry
-						title="Fest!"
-						time="Kl 20.00"
-						image="https://static.wixstatic.com/media/8f2c96_f2f95b2a749149b98ece29551c7634be~mv2.jpg/v1/fit/w_1251,h_574,q_90/8f2c96_f2f95b2a749149b98ece29551c7634be~mv2.jpg"
-					>
-						<p>
-							Efter middagen fortsätter festen i Lillegårdens festlokal. Vi ser fram emot att få
-							fira denna dag tillsammans med er!
-						</p>
-					</Entry>
-				</li>
+				{schemaEvents.map((event) => (
+					<li class="border-b border-sand first-of-type:border-t">
+						<Entry 
+							title={event.frontmatter.title} 
+							time=`Kl ${event.frontmatter.time}` 
+							image={event.frontmatter.image}
+						>
+							<Fragment set:html={event.compiledContent()}></Fragment>
+						</Entry>
+					</li>
+				))}
 			</ul>
 		</div>
 	</Section>
-	<Section density="compact">
-		<Title>O.S.A</Title>
-		<div class="flex flex-col gap-8">
-			<p>
-				Vi vill gärna att ni svarar senast den 1 juli om ni kan komma eller inte. Vi behöver veta om
-				ni kommer för att kunna planera dagen på bästa sätt.
-			</p>
-			<p>
-				Svara genom att skicka ett mail till oss på: <a
-					class="underline"
-					href="mailto:mail@asdqwe.se"
-				>
-					mail@asdqwe.se
-				</a> eller skicka ett sms till oss på 070-123 45 67.
-			</p>
-		</div>
-	</Section>
-	<Section density="compact" theme="light">
-		<Title>Information</Title>
+
+	<Section density="compact" title={information.frontmatter.title} list theme={(sections.length + 1) % 2 === 0 ? 'dark' : 'light'}>
 		<ul>
-			<li class="border-b border-sand first-of-type:border-t">
-				<Entry title="Klädkod">
-					<p>Vi önskar att ni klär er i somrig klädsel. Klädkoden är alltså sommarfin</p>
-				</Entry>
-			</li>
-			<li class="border-b border-sand first-of-type:border-t">
-				<Entry title="Barn">
-					<p>
-						Vi älskar era ungar men denna helg passar det bättre att de är hemma med sin barnvakt.
-						Barn under ett år som ammas är förstås välkomna.
-					</p>
-				</Entry>
-			</li>
-			<li class="border-b border-sand first-of-type:border-t">
-				<Entry title="Fotografering">
-					<p>Vi ser gärna att ni hjälper oss föreviga dagen, så fotografera på!</p>
-				</Entry>
-			</li>
+			{infoEntries.map((entry) => (
+				<li class="border-b border-sand first-of-type:border-t">
+					<Entry title={entry.frontmatter.title}>
+						<Fragment set:html={entry.compiledContent()}></Fragment>
+					</Entry>
+				</li>
+			))}
 		</ul>
-	</Section>
-	<Section>
-		<Title>Tal & spex</Title>
-		<div class="flex flex-col gap-8">
-			<p>
-				Vi skulle bli väldigt glada om någon av er vill hålla tal eller spex under kvällen. Om du
-				känner att du vill bidra med något, tveka inte att höra av dig till <a
-					class="underline"
-					href="mailto:mail@asdqwe.se"
-				>
-					mail@asdqwe.se
-				</a> eller skicka ett sms till Jörgen på 070-123 45 67!
-			</p>
-			<p>
-				Vi vill gärna veta i förväg om du vill hålla tal eller spex, så att vi kan planera kvällen
-				på bästa sätt. Hör av dig till oss senast den 1 juli om du vill bidra med något.
-			</p>
-		</div>
 	</Section>
 </Layout>
