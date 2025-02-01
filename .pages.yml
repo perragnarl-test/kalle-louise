@@ -1,1 +1,6 @@
-media: /src/content/media
+media: src/content/media
+content:
+  - name: sections
+    label: Sektioner
+    type: collection
+    path: src/content/sections
