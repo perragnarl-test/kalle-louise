@@ -1,4 +1,4 @@
-media: 
+media:
   input: public/media
   output: media
 content:
@@ -6,7 +6,7 @@ content:
     label: Inställningar
     type: file
     path: src/content/settings.md
-    fields: 
+    fields:
       - { name: title, label: Titel, type: string }
       - { name: date, label: Datum, type: rich-text }
       - { name: body, label: Hero-text, type: rich-text }
@@ -14,7 +14,7 @@ content:
     label: Sektioner
     type: collection
     path: src/content/sections
-    fields: 
+    fields:
       - { name: title, label: Titel, type: string }
       - { name: body, label: Innehåll, type: rich-text }
       - { name: columns, label: Kolumner, type: boolean, default: false }
@@ -23,14 +23,15 @@ content:
     label: Schema
     type: file
     path: src/content/schema.md
-    fields: 
+    fields:
+      - { name: image, label: Bild, type: image }
       - { name: title, label: Titel, type: string }
       - { name: body, label: Innehåll, type: rich-text }
   - name: information
     label: Information
     type: file
     path: src/content/information.md
-    fields: 
+    fields:
       - { name: title, label: Titel, type: string }
       - { name: body, label: Innehåll, type: rich-text }
   - name: infos
@@ -44,8 +45,8 @@ content:
     label: Hålltider
     type: collection
     path: src/content/events
-    fields: 
-      - { name: image, label: Titel, type: image }
-      - { name: time, label: Tid, type: date, options: {format: HH:mm, time: true } }
+    fields:
+      - { name: image, label: Bild, type: image }
+      - { name: time, label: Tid, type: date, options: { format: HH:mm, time: true } }
       - { name: title, label: Titel, type: string }
       - { name: body, label: Innehåll, type: rich-text }
