@@ -4,3 +4,8 @@ content:
     label: Sektioner
     type: collection
     path: src/content/sections
+    fields: 
+      - { name: title, label: Titel, type: string}
+      - { name: image, label: Bild, type: image}
+      - { name: columns, label: Kolumner, type: boolean}
+      - { name: order, label: Sortering, type: number}
