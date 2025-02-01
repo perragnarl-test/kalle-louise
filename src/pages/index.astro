@@ -51,18 +51,23 @@ sections = sections.sort((a, b) => a.frontmatter.order - b.frontmatter.order);
 
 // Sort by frontmatter time in descending order
 schemaEvents = schemaEvents.sort((a, b) => {
-    const aTime = a.frontmatter.time;
-    const bTime = b.frontmatter.time;
+    const convertToMinutes = (time: string) => {
+        const [hours, minutes] = time.split(':').map(Number);
+        return hours * 60 + minutes;
+    };
 
-    if (aTime < bTime) {
+    const aTime = convertToMinutes(a.frontmatter.time);
+    const bTime = convertToMinutes(b.frontmatter.time);
+
+    // Custom logic to handle times crossing midnight
+    if (aTime < 300 && bTime >= 300) {
+        return 1;
+    }
+    if (aTime >= 300 && bTime < 300) {
         return -1;
     }
 
-    if (aTime > bTime) {
-        return 1;
-    }
-
-    return 0;
+    return aTime - bTime;
 });
 
 ---
