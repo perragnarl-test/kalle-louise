@@ -1,4 +1,4 @@
-media: media
+media: public/media
 content:
   - name: settings
     label: Inställningar
