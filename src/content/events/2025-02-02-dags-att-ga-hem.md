@@ -1,5 +1,5 @@
 ---
-image: /media/vladislav-muslakov-CwIU33KGToc-unsplash.jpg
+image: /public/media/vladislav-muslakov-CwIU33KGToc-unsplash.jpg
 time: 02:00
 title: Dags att gå hem
 ---
