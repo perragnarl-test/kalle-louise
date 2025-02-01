@@ -27,8 +27,7 @@ content:
     label: Informationspunkter
     type: collection
     path: src/content/infos
-    fields: 
-      - { name: time, label: Tid, type: string }
+    fields:
       - { name: title, label: Titel, type: string }
       - { name: body, label: Innehåll, type: rich-text }
   - name: events
