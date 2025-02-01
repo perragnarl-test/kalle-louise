@@ -1,6 +1,5 @@
 ---
 title: Vi ska gifta oss
-image: null
 columns: true
 order: 1
 ---

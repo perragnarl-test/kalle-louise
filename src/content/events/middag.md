@@ -1,6 +1,5 @@
 ---
 title: Middag
-image: /images/middag.jpg
 time: Kl 17:00
 ---
 

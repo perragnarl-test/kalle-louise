@@ -1,6 +1,5 @@
 ---
 title: O.S.A
-image: null
 columns: true
 order: 2
 ---

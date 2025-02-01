@@ -7,6 +7,35 @@ content:
     fields: 
       - { name: title, label: Titel, type: string }
       - { name: body, label: Innehåll, type: rich-text }
-      - { name: image, label: Bild, type: image }
       - { name: columns, label: Kolumner, type: boolean, default: false }
       - { name: order, label: Sortering, type: number }
+  - name: schema
+    label: Schema
+    type: file
+    path: src/content/schema.md
+    fields: 
+      - { name: title, label: Titel, type: string }
+      - { name: body, label: Innehåll, type: rich-text }
+  - name: information
+    label: Information
+    type: file
+    path: src/content/information.md
+    fields: 
+      - { name: title, label: Titel, type: string }
+      - { name: body, label: Innehåll, type: rich-text }
+  - name: infos
+    label: Informationspunkter
+    type: collection
+    path: src/content/infos
+    fields: 
+      - { name: time, label: Tid, type: string }
+      - { name: title, label: Titel, type: string }
+      - { name: body, label: Innehåll, type: rich-text }
+  - name: events
+    label: Hålltider
+    type: collection
+    path: src/content/events
+    fields: 
+      - { name: time, label: Tid, type: string }
+      - { name: title, label: Titel, type: string }
+      - { name: body, label: Innehåll, type: rich-text }
