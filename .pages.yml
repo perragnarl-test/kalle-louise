@@ -5,7 +5,8 @@ content:
     type: collection
     path: src/content/sections
     fields: 
-      - { name: title, label: Titel, type: string}
-      - { name: image, label: Bild, type: image}
-      - { name: columns, label: Kolumner, type: boolean}
-      - { name: order, label: Sortering, type: number}
+      - { name: title, label: Titel, type: string }
+      - { name: body, label: Innehåll, type: rich-text }
+      - { name: image, label: Bild, type: image }
+      - { name: columns, label: Kolumner, type: boolean, default: false }
+      - { name: order, label: Sortering, type: number }
