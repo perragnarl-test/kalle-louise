@@ -43,6 +43,7 @@ content:
     type: collection
     path: src/content/events
     fields: 
-      - { name: time, label: Tid, type: string }
+      - { name: image, label: Titel, type: image }
+      - { name: time, label: Tid, type: date, options: {format: HH:mm, time: true } }
       - { name: title, label: Titel, type: string }
       - { name: body, label: Innehåll, type: rich-text }
