@@ -8,7 +8,7 @@ content:
     path: src/content/settings.md
     fields:
       - { name: title, label: Titel, type: string }
-      - { name: date, label: Datum, type: date, options: { format: YYYY-MM-DD } }
+      - { name: date, label: Datum, type: date, options: { format: yyy-MM-dd } }
       - { name: body, label: Hero-text, type: rich-text }
   - name: sections
     label: Sektioner
