@@ -16,7 +16,7 @@ const { theme = 'dark', density = 'default', columns = false, title, list = fals
 		class=`text-lg md:text-xl ${!list ? '[&_p]:mb-12' : ''} ${density === 'compact' ? 'max-w-xl' : 'max-w-3xl'} mx-auto py-32 md:py-52`
 	>
 		<Title>{title}</Title>
-		<div class={columns ? 'columns-2' : ''}>
+		<div class={columns ? 'md:columns-2' : ''}>
 			<slot />
 		</div>
 	</div>
