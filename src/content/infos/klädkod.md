@@ -1,4 +1,4 @@
 ---
 title: Klädkod
 ---
-Vi önskar att ni klär er i somrig klädsel. Klädkoden är alltså sommarfin
+Kavaj – Låt ert inre stråla ikapp med ert yttre denna dag och ta på något härligt inom klädkod Kavaj.
