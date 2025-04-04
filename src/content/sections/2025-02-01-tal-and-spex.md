@@ -1,8 +1,10 @@
 ---
-title: Tal & spex
+title: Tal & andra roligheter
 columns: false
 order: 3
 ---
-Vi skulle bli väldigt glada om någon av er vill hålla tal eller spex under kvällen. Om du känner att du vill bidra med något, tveka inte att höra av dig till [mail@asdqwe.se](mailto:mail@asdqwe.se) [](mailto:mail@asdqwe.se)eller skicka ett sms till Jörgen på 070-123 45 67!
+Vi ser fram emot en fantastisk kväll fylld med skratt, kärlek och kanske några överraskningar! Om ni känner att ni har ett tal eller någon annan rolig idé som ni vill dela med oss under kvällen, så är ni mer än välkomna att höra av er till våra toastmasters via bröllopsmailen: [KHJ.LK.WEDDING@GMAIL.COM](mailto:KHJ.LK.WEDDING@GMAIL.COM)
 
-Vi vill gärna veta i förväg om du vill hålla tal eller spex, så att vi kan planera kvällen på bästa sätt. Hör av dig till oss senast den 1 juli om du vill bidra med något.
+Vi ser gärna att talen är underhållande (men inte för långa, vi har ju kaffe och efterrätt att komma till!), och om ni har något kreativt eller roligt på lager, tveka inte att bidra till kvällens skratt!
+
+För alla som känner sig extra inspirerade och vill hålla i en PowerPoint-presentation om hur man lyckas i äktenskapet, så är ni varmt välkomna att anmäla er! Vi kan nästan lova att vi bjuder på en extra portion tårta för den som kan ge oss både skratt och (några) livsvisdomar.
