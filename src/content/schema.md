@@ -4,4 +4,4 @@ title: Bröllopsdagen
 ---
 Ställ in valfri GPS mot destinationen Lillegård, Fredriksrovägen 85, Kävlinge.
 
-Vår största önskan är att få dela denna dag med de personer som betyder allra mest för oss. Låt oss göra denna dag oförglömlig tillsammans på Lillegård!
+Sätt på er era kläder, ta med er er bästa energi och förbered er på en dag full av skratt, kärlek och oförglömliga minnen. Vi ser så mycket fram emot att få fira denna magiska dag med er alla!
