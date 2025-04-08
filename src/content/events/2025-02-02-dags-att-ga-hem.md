@@ -1,6 +1,6 @@
 ---
-image: media/vladislav-muslakov-CwIU33KGToc-unsplash.jpg
+image: media/ai-generated-8252259_640.jpg
 time: 02:00
-title: Dags att gå hem
+title: Klädkod
 ---
-Nu är det hög tid att gå hem, det är ju en dag i morgon också!
+Kavaj – Låt ert inre stråla ikapp med ert yttre denna dag och ta på något härligt inom klädkod Kavaj.
