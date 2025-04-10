@@ -1,0 +1,9 @@
+---
+image: media/vigsel-1.png
+time: 15:00
+title: THE VIGSEL
+---
+Vigsel, middag & fest kommer alltihop äga rum på Lillegård.  
+Vi säger "Ja!" till varandra klockan 15:00 – en ceremoni som vi lovar kommer vara minst lika vacker som vår kärlek (och kanske ännu vackrare om vi inte råkar fälla tårarna på fel ställen). Vigsel sker utomhus om vädret är med oss.
+
+Efter vigseln firar vi med en fantastisk middag och en fest som kommer att hålla oss dansande långt in på natten – för när vi säger "för evigt", menar vi verkligen för evigt (eller åtminstone tills vi har dansat oss trötta)!
