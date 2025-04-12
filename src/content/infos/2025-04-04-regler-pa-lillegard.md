@@ -1,6 +1,6 @@
 ---
 title: Tal & andra roligheter
-order: 2
+order: 4
 ---
 Vi ser fram emot en fantastisk kväll fylld med skratt, kärlek och kanske några överraskningar! Om ni känner att ni har ett tal eller någon annan rolig idé som ni vill dela med oss under kvällen, så är ni mer än välkomna att höra av er till våra toastmasters via bröllopsmailen: [KHJ.LK.WEDDING@GMAIL.COM](mailto:KHJ.LK.WEDDING@GMAIL.COM)
 
