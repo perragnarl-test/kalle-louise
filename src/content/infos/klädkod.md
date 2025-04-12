@@ -1,5 +1,6 @@
 ---
 title: Regler
+order: 7
 ---
 Vänligen tänk på att ni som brukar tobak - inget får slängas på marken. Detta är för allas trivsel samt för att slippa låta brudparet gå på skräpplockarrunda morgonen efter festligheter för att kunna få tillbaka depositionsavgiften.
 

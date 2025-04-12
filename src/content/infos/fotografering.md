@@ -1,5 +1,6 @@
 ---
 title: Hjälp oss att föreviga dagen
+order: 6
 ---
 Då vi lever i ett teknikens samhälle och alla går runt med en kamera i fickan, så önskar vi att ni hjälper oss med bilder under dagen, så om minnet är alltför suddigt efteråt så kan vi hjälpas åt att minnas.
 

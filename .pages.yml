@@ -41,6 +41,7 @@ content:
     fields:
       - { name: title, label: Titel, type: string }
       - { name: body, label: Innehåll, type: rich-text }
+      - { name: order, label: Sortering, type: number }
   - name: events
     label: Hålltider
     type: collection

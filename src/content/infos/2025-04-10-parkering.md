@@ -1,5 +1,6 @@
 ---
 title: Parkering
+order: 4
 ---
 Till Lillegård tar man sig bäst med någon typ av motor/batteridrivet fordon då kollektivtrafik är extremt sparsam i området.
 

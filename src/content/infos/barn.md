@@ -1,5 +1,6 @@
 ---
 title: Barn
+order: 5
 ---
 Vi ser fram emot att fira vår stora dag med er, men vi vill meddela att barn i åldern 1 år och uppåt inte kommer att vara en del av festligheterna. Vi hoppas att detta ger er en välförtjänt paus och möjligheten att njuta av kvällen utan att behöva fundera på barnmat, blöjbyten eller att hålla ett vakande öga på små tassande fötter!
 

@@ -21,6 +21,7 @@ interface Section {
 interface InfoEntry {
 	frontmatter: {
 		title: string;
+		order: number;
 	},
 	compiledContent: () => string;
 }
@@ -48,6 +49,9 @@ let schemaEvents = await Promise.all(
 
 // Sort by frontmatter order
 sections = sections.sort((a, b) => a.frontmatter.order - b.frontmatter.order);
+
+// Sort infoEntries by frontmatter order
+infoEntries = infoEntries.sort((a, b) => a.frontmatter.order - b.frontmatter.order);
 
 // Sort by frontmatter time in descending order
 schemaEvents = schemaEvents.sort((a, b) => {
